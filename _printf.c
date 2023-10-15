@@ -6,7 +6,7 @@
  * Return: number of characters printed
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	int num = 0, i;
 	char c, *str;
