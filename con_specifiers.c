@@ -9,6 +9,8 @@
 int print_char(char c)
 {
 	_putchar(c);
+	if (c == '\0')
+		return (0);
 	return (1);
 }
 
@@ -22,6 +24,11 @@ int print_str(char *str)
 {
 	int i = 0, count = 0;
 
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (5);
+	}
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
