@@ -33,6 +33,12 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				num++;
 			}
+			else
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				num += 2;
+			}
 		}
 		else
 		{
