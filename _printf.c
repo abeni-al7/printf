@@ -22,24 +22,23 @@ int _printf(const char *format, ...)
 			{
 				c = va_arg(args, int);
 				num += print_char(c);
-				i++;
 			}
 			else if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
 				num += print_str(str);
-				i++;
 			}
 			else if (format[i] == '%')
 			{
 				_putchar('%');
 				num++;
-				i++;
 			}
 		}
-		_putchar(format[i]);
-		num++;
-		i++;
+		else
+		{
+			_putchar(format[i]);
+			num++;
+		}
 	}
 	va_end(args);
 	return (num);
