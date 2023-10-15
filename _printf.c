@@ -25,6 +25,8 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				c = va_arg(args, int);
+				if (c == '\0')
+					return (-1);
 				num += print_char(c);
 			}
 			else if (format[i] == 's')
