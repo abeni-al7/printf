@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				num++;
 			}
+			else if (format[i] == '\0')
+				return (-1);
 			else
 			{
 				_putchar('%');
