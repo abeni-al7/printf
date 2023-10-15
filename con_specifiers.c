@@ -24,11 +24,6 @@ int print_str(char *str)
 {
 	int i = 0, count = 0;
 
-	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		return (-1);
-	}
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
