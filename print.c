@@ -10,14 +10,10 @@
 int print(const char *format, va_list args)
 {
 	unsigned int i = 0, count = 0, j = 0;
-	sp sp_arr[] = { {'c', print_char},
-			{'s', print_str},
-			{'d', print_int},
-			{'i', print_int},
-			{'b', print_binary},
-			{'u', print_unsigned},
-			{'o', print_octal},
-			{'x', print_lower_hexa},
+	sp sp_arr[] = { {'c', print_char}, {'s', print_str},
+			{'d', print_int}, {'i', print_int},
+			{'b', print_binary}, {'u', print_unsigned},
+			{'o', print_octal}, {'x', print_lower_hexa},
 			{'X', print_hexa}};
 
 	while (format[i] != '\0')
