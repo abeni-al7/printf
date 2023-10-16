@@ -2,13 +2,13 @@
 
 /**
  * print_char - prints a character
- * @c: character to print
+ * @args: character to print
  * Return: 1
  */
 
-int print_char(char c)
+int print_char(va_list args)
 {
-	_putchar(c);
+	_putchar(va_arg(args, int));
 	return (1);
 }
 
@@ -18,15 +18,19 @@ int print_char(char c)
  * Return: length of the string
  */
 
-int print_str(char *str)
+int print_str(va_list args)
 {
+	char *str = va_arg(args, char *);
 	int i = 0, count = 0;
 
-	while (str[i] != '\0')
+	if (str)
 	{
-		_putchar(str[i]);
-		count++;
-		i++;
+		while (str[i] != '\0')
+		{
+			_putchar(str[i]);
+			count++;
+			i++;
+		}
 	}
 
 	return (count);

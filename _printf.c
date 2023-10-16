@@ -8,8 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int num = 0, i;
-	char c, *str;
+	int num;
 	va_list args;
 
 	if (!format || !format[1])
@@ -17,41 +16,7 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	va_start(args, format);
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (format[i] == 'c')
-			{
-				c = va_arg(args, int);
-				num += print_char(c);
-			}
-			else if (format[i] == 's')
-			{
-				str = va_arg(args, char *);
-				num += print_str(str);
-			}
-			else if (format[i] == '%')
-			{
-				_putchar('%');
-				num++;
-			}
-			else if (format[i] == '\0')
-				return (-1);
-			else
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				num += 2;
-			}
-		}
-		else
-		{
-			_putchar(format[i]);
-			num++;
-		}
-	}
+	num = print(format, args);
 	va_end(args);
 	return (num);
 }
