@@ -113,14 +113,19 @@ int print_binary(va_list args)
 int print_unsigned(va_list args)
 {
 	unsigned int n = va_arg(args, int);
-	int count = 0;
+	int count = 0, digits[10], digit, top = -1;
 
-	if (n / 10)
+	do {
+		digit = n % 10;
+		digits[++top] = digit;
+		n /= 10;
+	} while (n != 0);
+	while (top >= 0)
 	{
-		print_unsigned(n / 10);
+		digit = digits[top--];
+		_putchar(digit + '0');
 		count++;
 	}
-	_putchar(n % 10 + '0');
 
 	return (count);
 }

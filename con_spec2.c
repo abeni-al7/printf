@@ -36,6 +36,7 @@ int print_octal(va_list args)
 
 int print_hexa (va_list args)
 {
+	unsigned int n = va_arg(args, int);
 	char hexa[20];
 	int i = 0, count = 0, rem, j;
 
@@ -68,6 +69,7 @@ int print_hexa (va_list args)
 
 int print_lower_hexa (va_list args)
 {
+	unsigned int n = va_arg(args, int);
 	char hexa[20];
 	int i = 0, count = 0, rem, j;
 
