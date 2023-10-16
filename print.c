@@ -11,7 +11,9 @@ int print(const char *format, va_list args)
 {
 	unsigned int i = 0, count = 0, j = 0;
 	sp sp_arr[] = { {'c', print_char},
-			{'s', print_str}};
+			{'s', print_str},
+			{'d', print_int},
+			{'i', print_int}};
 
 	while (format[i] != '\0')
 	{
