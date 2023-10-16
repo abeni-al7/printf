@@ -70,3 +70,36 @@ int print_int(va_list args)
 
 	return (count);
 }
+
+/**
+ * print_binary - print binary number
+ * @args: number to convert to binary
+ * Return: number of digits printed
+ */
+
+int print_binary(va_list args)
+{
+	unsigned int num = va_arg(args, int);
+        int binary[32], i = 0, j, count = 0;
+
+        if (num == 0)
+        {
+                _putchar('0');
+                return (1);
+        }
+
+        while (num > 0)
+        {
+                binary[i] = num % 2;
+                num = num / 2;
+                i++;
+        }
+
+        for (j = i - 1; j >= 0; j--)
+        {
+                _putchar(binary[j] + '0');
+                count++;
+        }
+
+        return (count);
+}

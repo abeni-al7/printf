@@ -13,7 +13,8 @@ int print(const char *format, va_list args)
 	sp sp_arr[] = { {'c', print_char},
 			{'s', print_str},
 			{'d', print_int},
-			{'i', print_int}};
+			{'i', print_int},
+			{'b', print_binary}};
 
 	while (format[i] != '\0')
 	{
