@@ -103,3 +103,25 @@ int print_binary(va_list args)
 
 	return (count);
 }
+
+/**
+ * print_unsigned - print positive numbers
+ * @args: number to print
+ * Return: number of digits printed
+ */
+
+int print_unsigned(va_list args)
+{
+	unsigned int n = va_arg(args, int);
+	int count = 0;
+
+	if (n / 10)
+	{
+		print_unsigned(n / 10);
+		count++;
+	}
+	_putchar(n % 10 + '0');
+
+	return (count);
+}
+
