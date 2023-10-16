@@ -5,6 +5,13 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * struct sp - struct of specifiers and functions
+ * @sp: specifiers
+ * @f: function pointers
+ * Description: this is a struct
+ */
+
 typedef struct sp
 {
 	char sp;

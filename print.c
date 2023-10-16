@@ -3,6 +3,7 @@
 /**
  * print - print each character to stdout
  * @format: string passed to printf
+ * @args: variable arguments
  * Return: number of characters printed
  */
 
@@ -44,4 +45,3 @@ int print(const char *format, va_list args)
 
 	return (count);
 }
-					
