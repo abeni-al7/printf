@@ -56,8 +56,7 @@ int print_int(va_list args)
 	}
 	else
 		num = n;
-	do
-	{
+	do {
 		digit = num % 10;
 		digits[++top] = digit;
 		num /= 10;
