@@ -50,6 +50,10 @@ int print_rot13(va_list args)
 	char s1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char s2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	if (str == NULL)
+	{
+		return (0);
+	}
 	for (i = 0; i < len; i++)
 	{
 		if (_isalpha(s[i]))
