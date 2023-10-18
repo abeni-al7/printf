@@ -36,12 +36,12 @@ int print(const char *format, va_list args)
 					}
 					j++;
 				}
-				j = 0;
 				if (sp_arr[j].sp == '\0')
 				{
 					count += _putchar(format[i - 1]);
 					count += _putchar(format[i]);
 				}
+				j = 0;
 			}
 		}
 		i++;
