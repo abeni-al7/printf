@@ -12,6 +12,11 @@ int print_octal(va_list args)
 	int octal[20], j;
 	int i = 0, count = 0;
 
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	while (n != 0)
 	{
 		octal[i] = n % 8;
