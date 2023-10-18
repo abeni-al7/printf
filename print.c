@@ -14,7 +14,7 @@ int print(const char *format, va_list args)
 			{'d', print_int}, {'i', print_int},
 			{'b', print_binary}, {'u', print_unsigned},
 			{'o', print_octal}, {'x', print_lower_hexa},
-			{'X', print_hexa}};
+			{'X', print_hexa}, {'S', print_ascii}};
 
 	while (format[i] != '\0')
 	{

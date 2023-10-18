@@ -29,5 +29,7 @@ int print_unsigned(va_list args);
 int print_octal(va_list args);
 int print_hexa(va_list args);
 int print_lower_hexa(va_list args);
+int print_ascii(va_list args);
+int print_hexadec(unsigned int n);
 
 #endif
