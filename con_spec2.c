@@ -45,6 +45,11 @@ int print_hexa(va_list args)
 	char hexa[20];
 	int i = 0, count = 0, rem, j;
 
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	while (n != 0)
 	{
 		rem = n % 16;
@@ -78,6 +83,11 @@ int print_lower_hexa(va_list args)
 	char hexa[20];
 	int i = 0, count = 0, rem, j;
 
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	while (n != 0)
 	{
 		rem = n % 16;
