@@ -146,25 +146,36 @@ int print_ascii(va_list args)
 
 int print_hexadec(unsigned int n)
 {
-	char hexa;
-	int rem;
+	char hexa[20];
+	int i = 0, count = 0, rem, j;
 
 	if (n == 0)
 	{
-		write(1, "00", 1);
+		write(1, "00", 2);
 		return (2);
 	}
-	if (n != 0)
+	if (n < 16)
+	{
+		_putchar('0');
+		count++;
+	}
+	while (n != 0)
 	{
 		rem = n % 16;
 
 		if (rem < 10)
-			hexa = rem + '0';
+			hexa[i] = rem + '0';
 		else
-			hexa = rem + 55;
+			hexa[i] = rem + 55;
+		n = n / 16;
+		i++;
 	}
-	_putchar('0');
-	_putchar(hexa);
 
-	return (2);
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(hexa[j]);
+		count++;
+	}
+
+	return (count);
 }
