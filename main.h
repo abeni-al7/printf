@@ -18,6 +18,7 @@ typedef struct sp
 	int (*f)(va_list);
 } sp;
 
+int _strlen(char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print(const char *format, va_list args);
@@ -31,5 +32,6 @@ int print_hexa(va_list args);
 int print_lower_hexa(va_list args);
 int print_ascii(va_list args);
 int print_hexadec(unsigned int n);
+int print_reverse(va_list args);
 
 #endif
