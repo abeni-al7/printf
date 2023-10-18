@@ -32,6 +32,11 @@ int print_str(va_list args)
 			i++;
 		}
 	}
+	else
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 
 	return (count);
 }
