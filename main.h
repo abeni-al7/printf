@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * struct sp - struct of specifiers and functions
@@ -18,6 +19,7 @@ typedef struct sp
 	int (*f)(va_list);
 } sp;
 
+int _isalpha(char c);
 int _strlen(char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -33,5 +35,6 @@ int print_lower_hexa(va_list args);
 int print_ascii(va_list args);
 int print_hexadec(unsigned int n);
 int print_reverse(va_list args);
+int print_rot13(va_list args);
 
 #endif
