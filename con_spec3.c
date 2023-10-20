@@ -96,4 +96,3 @@ int _isalpha(char c)
 	else
 		return (0);
 }
-
