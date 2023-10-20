@@ -36,5 +36,6 @@ int print_ascii(va_list args);
 int print_hexadec(unsigned int n);
 int print_reverse(va_list args);
 int print_rot13(va_list args);
+int print_address(va_list args);
 
 #endif

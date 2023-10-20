@@ -96,3 +96,45 @@ int _isalpha(char c)
 	else
 		return (0);
 }
+
+/**
+ * print_address - prints pointer value
+ * @args: pointer to print
+ * Return: number of characters printed
+ */
+
+int print_address(va_list args)
+{
+	int count = 0, i;
+	unsigned long value;
+	char hexa[] = "0123456789abcdef", values[20];
+	void *p = va_arg(args, void *);
+
+	if (p == NULL)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+
+	value = (unsigned long)p;
+
+	if (value == 0)
+	{
+		write(1, "0x0", 3);
+		return (3);
+	}
+
+	while (value > 0)
+	{
+		values[count] = hexa[value % 16];
+		value /= 16;
+		count++;
+	}
+
+	write(1, "0x", 2);
+	count += 2;
+	for (i = count - 1; i >= 0; i--)
+		_putchar(values[i]);
+
+	return (count);
+}
